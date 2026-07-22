@@ -1,0 +1,11 @@
+POST http://localhost:8080/promotions
+Content-Type: application/json
+
+{
+  "title": "20% Off Shoes",
+  "store": "Nike",
+  "couponCode": "SAVE20",
+  "category": "Clothing",
+  "description": "20 percent off for sneakers",
+  "used": false
+}
