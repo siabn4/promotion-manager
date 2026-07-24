@@ -9,6 +9,19 @@ import jakarta.persistence.GenerationType;
 // This class describes what a promotion is.
 @Entity
 public class Promotion {
+    // Id is primary key
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String title;
+    private String store;
+    private String couponCode;
+    private String description;
+    private String category;
+    private LocalDate expirationDate;
+    private LocalDate savedDate;
+    private Boolean used;
+
     public Promotion() {
     }
 
@@ -84,17 +97,5 @@ public class Promotion {
         this.store = store;
     }
 
-    // Id is primary key
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String title;
-    private String store;
-    private String couponCode;
-    private String description;
-    private String category;
-    private LocalDate expirationDate;
-    private LocalDate savedDate;
-    private Boolean used;
 }
 
