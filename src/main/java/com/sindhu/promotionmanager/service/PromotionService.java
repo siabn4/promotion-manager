@@ -1,6 +1,7 @@
 package com.sindhu.promotionmanager.service;
 
 import com.sindhu.promotionmanager.model.Promotion;
+import com.sindhu.promotionmanager.model.User;
 import com.sindhu.promotionmanager.repository.PromotionRepository;
 import org.springframework.stereotype.Service;
 
@@ -45,5 +46,9 @@ public class PromotionService {
 
     public void deletePromotion(Long id) {
         promotionRepository.deleteById(id);
+    }
+
+    public List<Promotion> getUserPromotions(User user){
+        return promotionRepository.findByUser(user);
     }
 }

@@ -1,10 +1,8 @@
 package com.sindhu.promotionmanager.model;
 
 import java.time.LocalDate;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+
+import jakarta.persistence.*;
 
 // This class describes what a promotion is.
 @Entity
@@ -21,6 +19,10 @@ public class Promotion {
     private LocalDate expirationDate;
     private LocalDate savedDate;
     private Boolean used;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public Promotion() {
     }
@@ -95,6 +97,14 @@ public class Promotion {
 
     public void setStore(String store) {
         this.store = store;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
 }
